@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory System</title>
+
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 75%;
+            margin: auto;
+        }
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            background-color: #8ebbe8;
+            padding: 10px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: center;
+        }
+        .highlight{
+            background-color: gold;
+            font-weight: bold;
+        }
+        .red{
+            color:red;
+            font-weight: bold;
+        }
+        tbody td:nth-child(2) {
+            text-align: left;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <table>
+            <caption>Inventory System</caption>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Supplier</th>
+            <th>Date</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+<tr>
+            <td>10001</td>
+            <td>Boy Bawang Adobo (pc)</td>
+            <td>1000</td>
+            <td rowspan="8" class="highlight"> KSK</td>
+            <td rowspan="2">5/14/2019</td>
+            <td rowspan="8"> <img src="image2.jpg" alt="image2" width="150">
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>10002</td>
+            <td>Boy Bawang Adobo (pac)</td>
+            <td>200</td>
+
+        </tr>
+        <tr>
+            <td>10003</td>
+            <td>Boy Bawang Garlic (PC)</td>
+            <td>3000</td>
+            <td rowspan="2">5/15/2019</td>
+
+        </tr>
+        <tr>
+            <td>10004</td>
+            <td>Boy Bawang Garlic (PAC)</td>
+            <td class= "red">150</td>
+        </tr>
+        <tr>
+            <td>10005</td>
+            <td>Boy Bawang Spicy (PC)</td>
+            <td>4000</td>
+            <td rowspan="2">5/16/2019</td>
+        </tr>
+        <tr>
+            <td>10006</td>
+            <td>Boy Bawang Spicy (PAC)</td>
+            <td>240</td>
+        </tr>
+        <tr>
+            <td>10007</td>
+            <td>Boy Bawang BBQ (PC)</td>
+            <td>3000</td>
+            <td rowspan="2">5/17/2019</td>
+
+        </tr>
+        <tr>
+            <td>10008</td>
+            <td>Boy Bawang BBQ (PAC)</td>
+            <td>210</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+</body>
+</html>

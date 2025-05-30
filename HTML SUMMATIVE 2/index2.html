@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registered Form</title>
+
+  <link rel="stylesheet" href="style.css" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 30px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
     }
+
     form {
       max-width: 500px;
+      width: 100%;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
+
     input, textarea {
       width: 100%;
       padding: 10px;
@@ -19,47 +34,59 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     textarea {
       height: 120px;
     }
-    .required {
-      font-size: 0.9em;
-      color: #555;
-    }
+
     button {
-      padding: 8px 16px;
-      background-color: #ccc;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
 
-  <form action="#" method="post">
+  <form action="/registered form" method="POST">
+    <h1>Registration Form</h1>
+
     <ul>
       <li>
-        <label for="name">Your Name*</label><br>
-        <input type="text" id="name" name="name" required>
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required />
       </li>
+
+
       <li>
-        <label for="email">Email*</label><br>
-        <input type="email" id="email" name="email" required>
+        <label for="birthday">Birthday:</label><br />
+        <input type="date" id="birthday" name="birthday" required />
       </li>
+
       <li>
-        <label for="contact">Contact No.*</label><br>
-        <input type="tel" id="contact" name="contact" required>
+        <label for="email">Email:</label><br />
+        <input type="text" id="email" name="email" required />
       </li>
+
       <li>
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message"></textarea>
-      </li>
-      <li class="required">required field*</li>
-      <li>
-        <button type="submit">Send</button>
+        <label for="contact">Contact Number:</label><br />
+        <input type="contact" id="contact" name="contact" required />
       </li>
     </ul>
+
+    <button type="submit">Submit</button>
   </form>
 
 </body>

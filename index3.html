@@ -3,122 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registered Form</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <title>Registration Form</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      height: 100vh;
+      padding: 20px;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       background-color: #f9f9f9;
     }
 
     form {
-      max-width: 500px;
       width: 100%;
+      max-width: 800px;
       background-color: #fff;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-sizing: border-box;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 5px 0 20px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
-
-    textarea {
-      height: 120px;
+      box-sizing: border-box;
     }
 
     button {
-      padding: 10px 20px;
+      width: 100%;
+      padding: 14px;
       background-color: #007BFF;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     ul {
       list-style-type: none;
       padding: 0;
+      margin: 0;
     }
 
-    input[type="radio"] {
-      margin-right: 5px;
-    }
-
-    .gender-section {
-      border: 1px solid #ccc;
-      padding: 15px;
-      border-radius: 6px;
+    fieldset {
+      border: 2px solid #ccc;
+      border-radius: 8px;
       margin-bottom: 20px;
-      background-color: #f5f5f5;
+      padding: 15px;
+      background-color: #fdfdfd;
     }
 
-    .gender-section legend {
+    legend {
       font-weight: bold;
-      padding: 0 5px;
+      padding: 0 10px;
     }
 
-    .gender-option {
+    .inline-option {
       display: inline-block;
       margin-right: 20px;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+      }
+
+      .inline-option {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      button {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
 
   <form action="/registered-form" method="GET">
-  <h1>Registration Form</h1>
+    <h1>Registration Form</h1>
 
-  <ul>
-    <li>
+    <fieldset>
+      <legend>Personal Details</legend>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required />
-    </li>
 
-    <li>
-      <fieldset class="gender-section">
-        <legend>Select your gender:</legend>
-        <label class="gender-option" for="gender-male">
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday" required />
+
+      <fieldset>
+        <legend>Gender</legend>
+        <label class="inline-option" for="gender-male">
           <input type="radio" id="gender-male" name="gender" value="male" required />
           Male
         </label>
-        <label class="gender-option" for="gender-female">
+        <label class="inline-option" for="gender-female">
           <input type="radio" id="gender-female" name="gender" value="female" />
           Female
         </label>
       </fieldset>
-    </li>
 
-    <li>
-      <label for="birthday">Birthday:</label>
-      <input type="date" id="birthday" name="birthday" required />
-    </li>
+      <fieldset>
+        <legend>Relationship Status</legend>
+        <label class="inline-option" for="relationship-single">
+          <input type="radio" id="relationship-single" name="relationship" value="Single" />
+          Single
+        </label>
+        <label class="inline-option" for="relationship-married">
+          <input type="radio" id="relationship-married" name="relationship" value="Married" />
+          Married
+        </label>
+      </fieldset>
+    </fieldset>
 
-    <li>
+    <fieldset>
+      <legend>Contact Information</legend>
       <label for="email">Email:</label>
       <input type="text" id="email" name="email" required />
-    </li>
 
-    <li>
       <label for="contact">Contact Number:</label>
       <input type="text" id="contact" name="contact" required />
-    </li>
-  </ul>
+    </fieldset>
 
-  <button type="submit">Submit</button>
-</form>
+    <fieldset>
+      <legend>Home Address</legend>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required />
+
+      <label for="state">State/Province:</label>
+      <input type="text" id="state" name="state" required />
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required />
+
+      <label for="zip">ZIP CODE:</label>
+      <input type="text" id="zip" name="zip" required />
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
 
 </body>
 </html>

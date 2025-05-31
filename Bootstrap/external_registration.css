@@ -1,0 +1,71 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-body {
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+form .form-group label {
+  font-weight: 500;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.custom-checkbox label {
+  font-weight: normal;
+}
+
+.custom-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #343a40;
+}
+
+button[type="submit"] {
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  legend {
+    font-size: 1.1rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

@@ -2,89 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registration Form</title>
-
-  <!-- Link external CSS -->
   <link rel="stylesheet" href="external_registration.css" />
 </head>
 <body>
-
-  <form action="/registered-form" method="GET">
+  <form action="/registered-form" method="GET" enctype="multipart/form-data">
     <h1>Registration Form</h1>
-
     <ul>
       <li>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-      </li>
-
-      <li>
-        <fieldset class="gender-section">
-          <legend>Select your gender:</legend>
-          <label class="inline-option" for="gender-male">
-            <input type="radio" id="gender-male" name="gender" value="male" required />
-            Male
-          </label>
-          <label class="inline-option" for="gender-female">
-            <input type="radio" id="gender-female" name="gender" value="female" />
-            Female
+        <fieldset class="terms-section">
+          <legend>Agreement</legend>
+          <label>
+            <input type="checkbox" id="terms" name="terms" required />
+            I confirm that all information provided is accurate and I agree to the terms and conditions.
           </label>
         </fieldset>
       </li>
-
       <li>
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday" required />
-      </li>
+        <fieldset class="personal-information">
+          <legend>Personal Information</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
 
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required />
+
+          <p>Select your gender:</p>
+          <label class="inline-option"><input type="radio" name="gender" value="male" required /> Male</label>
+          <label class="inline-option"><input type="radio" name="gender" value="female" /> Female</label>
+        </fieldset>
+      </li>
       <li>
         <fieldset class="relationship-section">
-          <legend>Relationship Status:</legend>
-          <label class="inline-option" for="relationship-single">
-            <input type="radio" id="relationship-single" name="relationship" value="Single" />
-            Single
-          </label>
-          <label class="inline-option" for="relationship-married">
-            <input type="radio" id="relationship-married" name="relationship" value="Married" />
-            Married
-          </label>
+          <legend>Relationship Status</legend>
+          <label class="inline-option"><input type="radio" name="relationship" value="Single" /> Single</label>
+          <label class="inline-option"><input type="radio" name="relationship" value="Married" /> Married</label>
         </fieldset>
       </li>
-
-      <li>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      </li>
-
       <li>
         <fieldset class="contact-section">
-          <legend>Contact Information:</legend>
+          <legend>Contact Information</legend>
           <label for="contact">Contact Number:</label>
-          <input type="text" id="contact" name="contact" required />
+          <input type="text" id="contact" name="contact" placeholder="Include country code e.g. +1 234-567-8901" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
         </fieldset>
       </li>
-
       <li>
         <fieldset class="address-section">
-          <legend>Home Address:</legend>
+          <legend>Home Address</legend>
           <label for="city">City:</label>
-          <input type="text" id="city" name="city" required />
+          <input type="text" id="city" name="city" placeholder="Enter your city" required />
 
           <label for="state">State/Province:</label>
-          <input type="text" id="state" name="state" required />
+          <input type="text" id="state" name="state" placeholder="Enter your state or province" required />
 
           <label for="country">Country:</label>
-          <input type="text" id="country" name="country" required />
+          <input type="text" id="country" name="country" placeholder="Enter your country" required />
 
           <label for="zip">ZIP CODE:</label>
-          <input type="text" id="zip" name="zip" required />
+          <input type="text" id="zip" name="zip" placeholder="Enter your ZIP code" required />
+        </fieldset>
+      </li>
+      <li>
+        <fieldset class="education-section">
+          <legend>Educational Background</legend>
+          <label for="education">Education:</label>
+          <textarea id="education" name="education" placeholder="E.g., B.Sc. in Computer Science, XYZ University, 2023" required></textarea>
+        </fieldset>
+      </li>
+      <li>
+        <fieldset class="position-section">
+          <legend>Application Details</legend>
+          <label for="position">Applying for Position:</label>
+          <select id="position" name="position" required>
+            <option value="">-- Select a position --</option>
+            <option value="it-manager">IT Project Manager</option>
+            <option value="it-business">IT Business Analyst</option>
+            <option value="cloud">Cloud Architect</option>
+            <option value="network">Network Engineer</option>
+            <option value="software">Software Developer</option>
+            <option value="security">Security Analyst & Architect</option>
+            <option value="quality-assurance">Quality Assurance Analyst</option>
+            <option value="database">Database Analyst</option>
+            <option value="data-science">Data Science Specialist</option>
+            <option value="business-systems">Business Systems Analyst</option>
+          </select>
+
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+        </fieldset>
+      </li>
+      <li>
+        <fieldset class="skills-section">
+          <legend>Skills</legend>
+          <p>Select Your Skills:</p>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="java" /> Java</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="python" /> Python</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="html-css" /> HTML/CSS</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="javascript" /> JavaScript</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="sql" /> SQL</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="project-management" /> Project Management</label>
+          <label class="checkbox-option"><input type="checkbox" name="skills[]" value="cloud" /> Cloud Computing</label>
+        </fieldset>
+      </li>
+      <li>
+        <fieldset class="experience-section">
+          <legend>Work Experience</legend>
+          <label for="experience">Experience:</label>
+          <textarea id="experience" name="experience" placeholder="List past roles, companies, and responsibilities" required></textarea>
         </fieldset>
       </li>
     </ul>
-
     <button type="submit">Submit</button>
   </form>
-
 </body>
 </html>

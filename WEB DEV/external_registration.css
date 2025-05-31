@@ -19,13 +19,28 @@ form {
   box-sizing: border-box;
 }
 
-input, textarea {
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"],
+textarea,
+select {
   width: 100%;
   padding: 12px;
   margin: 5px 0 20px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select[multiple] {
+  height: auto;
+  min-height: 100px;
 }
 
 button {
@@ -61,6 +76,25 @@ legend {
 .inline-option {
   display: inline-block;
   margin-right: 20px;
+}
+
+/* Skills section styled with checkboxes */
+.skills-section label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.skills-section input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+/* Terms checkbox */
+.terms-section input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  vertical-align: middle;
 }
 
 /* Responsive adjustments */

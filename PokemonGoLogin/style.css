@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('cherry-blossom-tree.jpg'); 
+    background-size: cover;                  
+    background-repeat: no-repeat;           
+    background-position: center center;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    text-align: center;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.apple {
+    background-color: black;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.google {
+    background-color: rgb(255, 255, 255);
+    color: #444;
+    border: 1px solid #ccc;
+}
+
+.niantic-kids {
+    background-color: #f44236;
+}
+
+.trainer-club {
+    background-color: #34a853;
+}
+
+.note {
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.promo {
+    margin-top: 20px;
+    background: linear-gradient(to right, #0048ff, #00aaff);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.promo-img {
+    width: 60px;
+    vertical-align: middle;
+}
+
+.promo-text {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 1.1em;
+}
+
+.help {
+    margin-top: 20px;
+}
+
+footer {
+    font-size: 0.75em;
+    color: gray;
+    margin-top: 20px;
+}
+
+footer a {
+    color: gray;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer select {
+    margin-top: 5px;
+}
+
+/* 🔹 New styles for forms */
+.hidden {
+    display: none;
+}
+
+.form input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+.form h3 {
+    margin-bottom: 15px;
+    color: #333;
+}

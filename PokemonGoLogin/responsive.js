@@ -1,70 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttonGroup = document.getElementById('button-group');
-    const signinForm = document.getElementById('signin-form');
-    const createForm = document.getElementById('create-form');
-    const createLink = document.getElementById('create-link');
+  const buttonGroup = document.getElementById('button-group');
+  const signinForm = document.getElementById('signin-form');
+  const createForm = document.getElementById('create-form');
+  const createLink = document.getElementById('create-link');
+  const returnBtn = document.getElementById('return-btn');
+  const createMessage = document.getElementById('create-message');
 
-    // Show Sign In Form
-    buttonGroup.querySelectorAll('.btn').forEach(button => {
-        button.addEventListener('click', () => {
-            buttonGroup.classList.add('hidden');
-            signinForm.classList.remove('hidden');
-            createForm.classList.add('hidden');
-        });
+  // Show Sign In form after clicking third-party button
+  buttonGroup.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttonGroup.classList.add('hidden');
+      signinForm.classList.remove('hidden');
+      createForm.classList.add('hidden');
+      createMessage.classList.remove('hidden');
     });
+  });
 
-    // Show Create Account Form
-    createLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        buttonGroup.classList.add('hidden');
-        signinForm.classList.add('hidden');
-        createForm.classList.remove('hidden');
-    });
+  // Show Create Account form and hide "make one today" message
+  createLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    buttonGroup.classList.add('hidden');
+    signinForm.classList.add('hidden');
+    createForm.classList.remove('hidden');
+    createMessage.classList.add('hidden'); // ✅ Hide it here
+  });
 
-    // Handle Sign In Submit
-    signinForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Signed in successfully!');
-    });
+  // Return to Sign In and show message again
+  returnBtn.addEventListener('click', () => {
+    createForm.classList.add('hidden');
+    signinForm.classList.remove('hidden');
+    buttonGroup.classList.add('hidden');
+    createMessage.classList.remove('hidden'); // ✅ Show it again
+  });
 
-    // Handle Create Account Submit
-    createForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+  // Handle Sign In submit
+  signinForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("Signed in successfully!");
+  });
 
-        const firstName = document.getElementById('firstName').value.trim();
-        const middleName = document.getElementById('middleName').value.trim();
-        const lastName = document.getElementById('lastName').value.trim();
-        const gender = document.getElementById('gender').value;
-        const birthday = document.getElementById('birthday').value;
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        const accountCode = document.getElementById('accountCode').value.trim();
+  // Handle Create Account submit
+  createForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-        if (!firstName || !middleName || !lastName || !gender || !birthday || !accountCode) {
-            alert("Please fill in all fields.");
-            return;
-        }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-        if (!emailRegex.test(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
-        if (!passwordRegex.test(password)) {
-            alert("Password must contain:\n• At least 8 characters\n• A capital letter\n• A lowercase letter\n• A number\n• A special character");
-            return;
-        }
+    if (!passwordRegex.test(password)) {
+      alert("Password must include uppercase, lowercase, number, and special character.");
+      return;
+    }
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-        }
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
 
-        alert("Account successfully registered!");
-        createForm.reset();
-    });
+    alert("Account successfully registered!");
+    createForm.reset();
+  });
 });

@@ -2,9 +2,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url('cherry-blossom-tree.jpg'); 
-    background-size: cover;                  
-    background-repeat: no-repeat;           
-    background-position: center center;      
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,27 +34,15 @@ body {
     font-weight: bold;
 }
 
-.apple {
-    background-color: black;
-}
-
-.facebook {
-    background-color: #1877f2;
-}
-
+.apple { background-color: black; }
+.facebook { background-color: #1877f2; }
 .google {
     background-color: rgb(255, 255, 255);
     color: #444;
     border: 1px solid #ccc;
 }
-
-.niantic-kids {
-    background-color: #f44236;
-}
-
-.trainer-club {
-    background-color: #34a853;
-}
+.niantic-kids { background-color: #f44236; }
+.trainer-club { background-color: #34a853; }
 
 .note {
     font-size: 0.9em;
@@ -101,12 +89,14 @@ footer select {
     margin-top: 5px;
 }
 
-/* 🔹 New styles for forms */
+/* 🔹 Form Styles */
 .hidden {
     display: none;
 }
 
-.form input {
+.form input,
+.form select,
+.form input[type="date"] {
     display: block;
     width: 90%;
     margin: 10px auto;
